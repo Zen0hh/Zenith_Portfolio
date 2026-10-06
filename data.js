@@ -34,18 +34,46 @@ const PORTFOLIO_CONFIG = {
 
 const PORTFOLIO_ITEMS = [
   {
-    id: "g-1",
-    title: "Project 01 — Kinetic Cut",
+    id: "g-3",
+    title: "Project 03 — Motion Sequence",
     category: "motion",
     role: "Edit & VFX",
+    year: "2024",
+    orientation: "landscape",
+    color: "#bde8d5",
+    glyph: "03",
+    duration: "01:40",
+    featured: true,
+    description: "After Effects compositing, clean title animations, and visual accents.",
+    url: "https://drive.google.com/file/d/1Db5AM9tSjAKnx4ZTo0vyNl2WXDIEVIWs/view?usp=drive_link"
+  },
+  {
+    id: "cut-startup",
+    title: "Startup Style Edit",
+    category: "reels",
+    role: "Short-Form Edit",
+    year: "2025",
+    orientation: "portrait",
+    color: "#dfff62",
+    glyph: "ST",
+    duration: "00:45",
+    featured: true,
+    description: "High-retention startup style commercial edit with punchy pacing and clean captions.",
+    url: "https://drive.google.com/file/d/1XM71ah5tXUZaPjTwJRnOOKmlz0aCpKE7/view?usp=drive_link"
+  },
+  {
+    id: "cut-podcast",
+    title: "Podcast Trailer Edit For What's With",
+    category: "reels",
+    role: "Podcast Trailer",
     year: "2025",
     orientation: "landscape",
-    color: "#bcdcff",
-    glyph: "01",
-    duration: "01:14",
+    color: "#ff735f",
+    glyph: "WW",
+    duration: "01:00",
     featured: true,
-    description: "High-energy commercial cut with dynamic speed ramps and kinetic typography.",
-    url: "https://drive.google.com/file/d/1XM71ah5tXUZaPjTwJRnOOKmlz0aCpKE7/view?usp=drive_link"
+    description: "Dynamic trailer edit for the What's With podcast featuring multi-cam switching and custom sound design.",
+    url: "https://drive.google.com/file/d/1Hd1FeEJXDtPzRqRe3OoK34SwhOCiGzpc/view?usp=drive_link"
   },
   {
     id: "g-5",
@@ -62,6 +90,34 @@ const PORTFOLIO_ITEMS = [
     url: "https://drive.google.com/file/d/1CnIUTCv1ZRUOEDOTpPSSMBOQrXQJUnMi/view?usp=drive_link"
   },
   {
+    id: "g-1",
+    title: "Project 01 — Kinetic Cut",
+    category: "motion",
+    role: "Edit & VFX",
+    year: "2025",
+    orientation: "landscape",
+    color: "#bcdcff",
+    glyph: "01",
+    duration: "01:14",
+    featured: false,
+    description: "High-energy commercial cut with dynamic speed ramps and kinetic typography.",
+    url: "https://drive.google.com/file/d/1XM71ah5tXUZaPjTwJRnOOKmlz0aCpKE7/view?usp=drive_link"
+  },
+  {
+    id: "cut-ui",
+    title: "Ui demo",
+    category: "motion",
+    role: "UI Motion & Demo",
+    year: "2025",
+    orientation: "landscape",
+    color: "#cdbdff",
+    glyph: "UI",
+    duration: "00:30",
+    featured: false,
+    description: "Sleek product UI demo animation showcasing user workflow and micro-interactions.",
+    url: "https://drive.google.com/file/d/120xmWrSLPbzUh7oYMwkh5C048W1mkw1a/view?usp=drive_link"
+  },
+  {
     id: "g-2",
     title: "Project 02 — Cinematic Story",
     category: "cinematic",
@@ -71,9 +127,23 @@ const PORTFOLIO_ITEMS = [
     color: "#ff735f",
     glyph: "02",
     duration: "02:18",
-    featured: true,
+    featured: false,
     description: "Narrative edit with warm cinematic color grading and subtle soundscape design.",
     url: "https://drive.google.com/file/d/1Hd1FeEJXDtPzRqRe3OoK34SwhOCiGzpc/view?usp=drive_link"
+  },
+  {
+    id: "cut-ceo",
+    title: "Vlog edit of a US based company's CEO",
+    category: "cinematic",
+    role: "Vlog & YouTube Edit",
+    year: "2025",
+    orientation: "landscape",
+    color: "#bde8d5",
+    glyph: "VL",
+    duration: "03:15",
+    featured: false,
+    description: "Polished executive vlog storytelling edit with deliberate pacing, b-roll rhythm, and studio grade.",
+    url: "https://drive.google.com/file/d/1vk4ei61iMzlUl8-9v48wCh-CNToQ4aDI/view?usp=drive_link"
   },
   {
     id: "g-8",
@@ -85,23 +155,9 @@ const PORTFOLIO_ITEMS = [
     color: "#cdbdff",
     glyph: "08",
     duration: "00:45",
-    featured: true,
+    featured: false,
     description: "9:16 social cut crafted for Instagram and TikTok with seamless transition rhythm.",
     url: "https://drive.google.com/file/d/12HLZvtPo6FG8yZ2fuIKJY67gsJDZpxoa/view?usp=drive_link"
-  },
-  {
-    id: "g-3",
-    title: "Project 03 — Motion Sequence",
-    category: "motion",
-    role: "Edit & VFX",
-    year: "2024",
-    orientation: "landscape",
-    color: "#bde8d5",
-    glyph: "03",
-    duration: "01:40",
-    featured: false,
-    description: "After Effects compositing, clean title animations, and visual accents.",
-    url: "https://drive.google.com/file/d/1Db5AM9tSjAKnx4ZTo0vyNl2WXDIEVIWs/view?usp=drive_link"
   },
   {
     id: "g-4",
@@ -146,6 +202,20 @@ const PORTFOLIO_ITEMS = [
     url: "https://drive.google.com/file/d/1zEA44EkSzTjFnFX_sQ9YLzC8GN4QGH_g/view?usp=drive_link"
   },
   {
+    id: "g-9",
+    title: "Project 09 — Cinematic Travel",
+    category: "cinematic",
+    role: "Edit & Color",
+    year: "2024",
+    orientation: "landscape",
+    color: "#dfff62",
+    glyph: "09",
+    duration: "02:30",
+    featured: false,
+    description: "Rich documentary-style travel sequence with natural soundscapes.",
+    url: "https://drive.google.com/file/d/1UlTvjuIF4uoFnZf-6qaDiWZdLASxNw7I/view?usp=drive_link"
+  },
+  {
     id: "g-12",
     title: "Project 12 — Fashion Reel",
     category: "reels",
@@ -172,20 +242,6 @@ const PORTFOLIO_ITEMS = [
     featured: false,
     description: "Title animation, sky replacement, and object tracking for commercial polish.",
     url: "https://drive.google.com/file/d/120xmWrSLPbzUh7oYMwkh5C048W1mkw1a/view?usp=drive_link"
-  },
-  {
-    id: "g-9",
-    title: "Project 09 — Cinematic Travel",
-    category: "cinematic",
-    role: "Edit & Color",
-    year: "2024",
-    orientation: "landscape",
-    color: "#dfff62",
-    glyph: "09",
-    duration: "02:30",
-    featured: false,
-    description: "Rich documentary-style travel sequence with natural soundscapes.",
-    url: "https://drive.google.com/file/d/1UlTvjuIF4uoFnZf-6qaDiWZdLASxNw7I/view?usp=drive_link"
   },
   {
     id: "g-13",

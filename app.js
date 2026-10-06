@@ -69,7 +69,27 @@
   function loadItems() {
     const deleted = getDeletedIds();
     try {
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      let saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      // Fallback to legacy storage key if shelf_v2 is empty
+      if (!Array.isArray(saved) || saved.length === 0) {
+        const legacy = JSON.parse(localStorage.getItem('zenith_portfolio_items'));
+        if (Array.isArray(legacy) && legacy.length > 0) {
+          saved = legacy.map(it => ({
+            id: it.id || `cut-${Date.now()}`,
+            title: it.title || 'Untitled Cut',
+            category: it.category || 'reels',
+            role: it.role || it.category || 'Video Edit',
+            year: String(it.year || '2025'),
+            duration: it.duration || 'play',
+            featured: !!it.featured,
+            description: it.description || '',
+            url: it.mediaUrl || it.url || '',
+            thumbnail: it.thumbnail || ''
+          }));
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+        }
+      }
+
       if (Array.isArray(saved) && saved.length > 0) {
         // Keep non-deleted saved items
         const currentList = saved.filter(it => !deleted.includes(it.id));
