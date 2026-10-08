@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  const STORAGE_KEY = 'zenith_portfolio_shelf_v2';
+  const STORAGE_KEY = 'zenith_portfolio_shelf_v3';
   const PALETTE = ['#bcdcff', '#dfff62', '#ff735f', '#cdbdff', '#bde8d5'];
   const SOURCE_NAMES = {
     youtube: 'YouTube',
@@ -44,7 +44,7 @@
   }
 
   // ── Data Persistence & Sync ───────────────────────────────
-  const DELETED_KEY = 'zenith_portfolio_deleted_cuts_v2';
+  const DELETED_KEY = 'zenith_portfolio_deleted_cuts_v3';
 
   function getDeletedIds() {
     try {
@@ -70,26 +70,6 @@
     const deleted = getDeletedIds();
     try {
       let saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      // Fallback to legacy storage key if shelf_v2 is empty
-      if (!Array.isArray(saved) || saved.length === 0) {
-        const legacy = JSON.parse(localStorage.getItem('zenith_portfolio_items'));
-        if (Array.isArray(legacy) && legacy.length > 0) {
-          saved = legacy.map(it => ({
-            id: it.id || `cut-${Date.now()}`,
-            title: it.title || 'Untitled Cut',
-            category: it.category || 'reels',
-            role: it.role || it.category || 'Video Edit',
-            year: String(it.year || '2025'),
-            duration: it.duration || 'play',
-            featured: !!it.featured,
-            description: it.description || '',
-            url: it.mediaUrl || it.url || '',
-            thumbnail: it.thumbnail || ''
-          }));
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
-        }
-      }
-
       if (Array.isArray(saved) && saved.length > 0) {
         // Keep non-deleted saved items
         const currentList = saved.filter(it => !deleted.includes(it.id));
