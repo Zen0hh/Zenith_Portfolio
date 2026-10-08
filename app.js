@@ -599,7 +599,12 @@
 
   function isCuratorEnabled() {
     const params = new URLSearchParams(window.location.search);
-    return params.has('manage') || params.has('admin') || localStorage.getItem('zenith_curator_mode') === 'true';
+    if (params.has('manage') || params.has('admin')) {
+      return true;
+    }
+    // Ensure normal visitors never see the badge and clear any legacy saved flag
+    try { localStorage.removeItem('zenith_curator_mode'); } catch (e) {}
+    return false;
   }
 
   function setCuratorEnabled(enabled) {
@@ -620,7 +625,6 @@
   function openCuratorModal() {
     const modal = $('[data-curator-modal]');
     if (!modal) return;
-    setCuratorEnabled(true);
     renderCuratorList();
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';

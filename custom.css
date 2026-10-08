@@ -1917,10 +1917,10 @@ footer {
 @media (max-width: 1040px) {
   .hero {
     grid-template-columns: 1fr;
-    gap: 54px;
+    gap: 48px;
   }
   .hero-art {
-    min-height: 440px;
+    min-height: 400px;
     max-width: 620px;
     width: 100%;
     margin: 0 auto;
@@ -1929,34 +1929,76 @@ footer {
   .work-grid { column-count: 2; }
   .services-grid, .packages-grid { grid-template-columns: 1fr; }
   .about-section, .faq-section, .contact-layout { grid-template-columns: 1fr; gap: 40px; }
-  .about-photo-card { max-width: 100%; }
+  .about-photo-card {
+    position: static !important;
+    top: auto !important;
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 8px 8px 0 var(--ink);
+  }
 }
 
 @media (max-width: 680px) {
-  .site-shell { width: min(100% - 28px, 1440px); }
-  .topbar { min-height: 64px; }
+  html, body {
+    overflow-x: hidden;
+  }
+  .site-shell { width: min(100% - 24px, 1440px); }
+  .topbar { min-height: 60px; }
   .topnav { display: none; }
-  .hero { padding: 48px 0 60px; }
-  h1 { font-size: clamp(50px, 16vw, 84px); }
-  .hero-art { min-height: 360px; }
-  .art-mark { font-size: 84px; }
+  .hero { padding: 40px 0 50px; gap: 36px; }
+  h1 { font-size: clamp(38px, 12vw, 64px); line-height: 1.08; }
+  .hero-art { min-height: 300px; }
+  .art-mark { font-size: clamp(52px, 16vw, 76px); }
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hero-actions .pill-button {
+    font-size: 13px;
+    padding: 10px 18px;
+  }
+  .hero-stats {
+    margin-top: 36px;
+    gap: 24px;
+  }
   .section-heading { display: block; }
-  .section-heading > p { margin-top: 14px; }
+  .section-heading > p { margin-top: 10px; }
   .rail-controls { margin-top: 14px; }
   .feature-card {
-    flex-basis: 88vw;
-    min-height: 250px;
-    grid-template-columns: 1fr 0.9fr;
+    flex-basis: 86vw;
+    min-height: auto;
+    grid-template-columns: 1fr;
   }
-  .feature-poster { min-height: 250px; }
-  .archive { padding: 60px 0; }
+  .feature-poster {
+    min-height: 190px;
+    aspect-ratio: 16 / 10;
+  }
+  .feature-details {
+    padding: 18px;
+  }
+  .about-section {
+    padding: 50px 0 70px;
+    gap: 32px;
+  }
+  .about-photo-card {
+    position: static !important;
+    top: auto !important;
+    max-width: 320px;
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+  .about-caption-box {
+    padding: 16px 18px;
+  }
+  .archive { padding: 50px 0; }
   .archive-bar { display: block; }
-  .archive-count { display: block; margin-top: 14px; }
+  .archive-count { display: block; margin-top: 12px; }
   .work-grid { column-count: 1; }
   .form-grid { grid-template-columns: 1fr; }
   .field.full { grid-column: auto; }
-  .modal-header h2 { font-size: 28px; }
-  .modal-header, .modal-content, .form-body { padding: 18px; }
+  .modal-header h2 { font-size: 24px; }
+  .modal-header, .modal-content, .form-body { padding: 16px; }
   footer { display: block; }
   .footer-status { margin-top: 14px; }
   .curator-item {
@@ -1965,6 +2007,15 @@ footer {
   }
   .curator-thumb { display: none; }
   .curator-buttons { grid-column: 1 / -1; justify-content: flex-end; }
+}
+
+@media (max-width: 480px) {
+  .wordmark-sub { display: none; }
+  .topbar { padding: 10px 0; }
+  .site-shell { width: min(100% - 20px, 1440px); }
+  .hero-actions .pill-button { width: 100%; text-align: center; justify-content: center; }
+  .feature-card { flex-basis: 90vw; }
+  .about-photo-card { max-width: 290px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
